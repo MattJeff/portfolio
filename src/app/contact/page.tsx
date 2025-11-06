@@ -36,8 +36,19 @@ export default function ContactPage() {
 
   // Initialize EmailJS
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    console.log('EmailJS Configuration Check:', {
+      hasPublicKey: !!publicKey,
+      hasServiceId: !!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      hasTemplateQuote: !!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_QUOTE,
+      hasTemplateContact: !!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
+    })
+
+    if (publicKey) {
+      emailjs.init(publicKey)
+      console.log('✅ EmailJS initialized')
+    } else {
+      console.error('❌ EmailJS Public Key is missing!')
     }
   }, [])
 
@@ -46,6 +57,15 @@ export default function ContactPage() {
     setQuoteStatus({ loading: true, success: false, error: '' })
 
     try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_QUOTE
+
+      console.log('Sending quote with:', { serviceId, templateId })
+
+      if (!serviceId || !templateId) {
+        throw new Error('Configuration EmailJS manquante. Avez-vous redémarré le serveur ?')
+      }
+
       const templateParams = {
         to_name: 'Mathis',
         from_name: quoteForm.name,
@@ -56,23 +76,24 @@ export default function ContactPage() {
         reply_to: quoteForm.email
       }
 
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_QUOTE!,
-        templateParams
-      )
+      console.log('Template params:', templateParams)
+
+      const response = await emailjs.send(serviceId, templateId, templateParams)
+
+      console.log('✅ Email sent successfully:', response)
 
       setQuoteStatus({ loading: false, success: true, error: '' })
       setQuoteForm({ name: '', email: '', budget: '', projectDescription: '', features: '' })
 
       // Reset success message after 5 seconds
       setTimeout(() => setQuoteStatus({ loading: false, success: false, error: '' }), 5000)
-    } catch (error) {
-      console.error('Error sending quote:', error)
+    } catch (error: any) {
+      console.error('❌ Error sending quote:', error)
+      const errorMessage = error.text || error.message || 'Erreur inconnue'
       setQuoteStatus({
         loading: false,
         success: false,
-        error: 'Erreur lors de l\'envoi. Veuillez réessayer ou m\'envoyer un email directement.'
+        error: `Erreur: ${errorMessage}. Contactez-moi à mhiguinen235@gmail.com`
       })
     }
   }
@@ -82,6 +103,15 @@ export default function ContactPage() {
     setContactStatus({ loading: true, success: false, error: '' })
 
     try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
+
+      console.log('Sending contact message with:', { serviceId, templateId })
+
+      if (!serviceId || !templateId) {
+        throw new Error('Configuration EmailJS manquante. Avez-vous redémarré le serveur ?')
+      }
+
       const templateParams = {
         to_name: 'Mathis',
         from_name: contactForm.name,
@@ -90,23 +120,24 @@ export default function ContactPage() {
         reply_to: contactForm.email
       }
 
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT!,
-        templateParams
-      )
+      console.log('Template params:', templateParams)
+
+      const response = await emailjs.send(serviceId, templateId, templateParams)
+
+      console.log('✅ Contact message sent successfully:', response)
 
       setContactStatus({ loading: false, success: true, error: '' })
       setContactForm({ name: '', email: '', message: '' })
 
       // Reset success message after 5 seconds
       setTimeout(() => setContactStatus({ loading: false, success: false, error: '' }), 5000)
-    } catch (error) {
-      console.error('Error sending message:', error)
+    } catch (error: any) {
+      console.error('❌ Error sending contact message:', error)
+      const errorMessage = error.text || error.message || 'Erreur inconnue'
       setContactStatus({
         loading: false,
         success: false,
-        error: 'Erreur lors de l\'envoi. Veuillez réessayer ou m\'envoyer un email directement.'
+        error: `Erreur: ${errorMessage}. Contactez-moi à mhiguinen235@gmail.com`
       })
     }
   }
