@@ -9,7 +9,8 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Portfolio Mathis Higuinen\n\n- Next.js 14 portfolio with TypeScript\n- Responsive design with Tailwind CSS\n- EmailJS integration for contact forms\n- Sections: Hero, About, Skills, Journey, Projects\n- 7 years of experience showcased\n- Graduate & Bachelor iOS/Android developer\n- Contact page with quote and message forms\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
