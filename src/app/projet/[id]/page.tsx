@@ -8,6 +8,38 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Code2, Layers } from 'lucide-react'
 
 const projectsData = {
+  'localforge-ai': {
+    title: 'LocalForge AI - Dataset Generator',
+    year: '2025',
+    client: 'Projet Open Source',
+    description: `LocalForge AI est une application desktop cross-platform permettant de générer des datasets d'entraînement de haute qualité pour le fine-tuning de modèles d'IA. L'application se distingue par son architecture 100% locale garantissant la confidentialité totale des données.
+
+    Le workflow en 3 étapes permet d'importer des documents multi-formats (PDF, DOCX, TXT, Markdown, HTML), de générer automatiquement des paires instruction/réponse via LLMs locaux (Ollama), et d'exporter au format JSONL standard.
+
+    L'application a été conçue pour les développeurs et chercheurs en IA qui ont besoin de créer des datasets de qualité tout en gardant un contrôle total sur leurs données sensibles. Le traitement parallèle et le chunking intelligent assurent des performances optimales même sur de grands corpus de documents.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture hybride React/TypeScript + Rust pour performances optimales
+    - Gestion du traitement parallèle de multiples documents volumineux
+    - Intégration transparente avec l'API Ollama pour l'inférence locale
+    - Parsing robuste de multiples formats de documents (PDF, DOCX, HTML)
+    - Chunking intelligent avec overlapping pour maintenir la cohérence contextuelle
+    - Interface utilisateur réactive avec suivi de progression en temps réel`,
+    solution: `J'ai développé une architecture hybride exploitant les forces de chaque technologie : React/TypeScript pour l'UI moderne et Rust/Tauri pour les performances système. Le backend Rust utilise Tokio pour l'asynchrone et Rayon pour le traitement parallèle. Un système de chunking intelligent découpe les documents avec overlapping pour maintenir le contexte. L'intégration avec Ollama permet l'inférence LLM locale sans dépendance cloud. Le state management avec Zustand assure une UI réactive avec des mises à jour en temps réel du workflow de génération.`,
+    technologies: ['React 19', 'TypeScript', 'Rust', 'Tauri 2.0', 'Vite', 'Tailwind CSS 4', 'Zustand', 'Tokio', 'Ollama API', 'i18next', 'Framer Motion'],
+    features: [
+      'Import multi-formats (PDF, DOCX, TXT, Markdown, HTML)',
+      'Génération automatique via LLMs locaux (Ollama)',
+      'Chunking intelligent avec overlapping contextuel',
+      'Traitement parallèle pour performances optimales',
+      'Export JSONL compatible Hugging Face',
+      'Interface drag & drop intuitive',
+      'Suivi de progression en temps réel',
+      'Architecture 100% locale (confidentialité)',
+      'Support multilingue (EN/FR)',
+      'Cross-platform (macOS, Windows, Linux)'
+    ],
+    images: ['/images/localforge-ai-1.jpg', '/images/localforge-ai-2.jpg']
+  },
   'learning-english': {
     title: 'Learning English - Extension Chrome',
     year: '2025',

@@ -1,9 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
-import { ExternalLink, Github, Calendar, Chrome, Smartphone } from 'lucide-react'
+import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu } from 'lucide-react'
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      id: 'localforge-ai',
+      title: 'LocalForge AI',
+      subtitle: 'Application Desktop Cross-Platform',
+      year: '2025',
+      description: 'Application desktop moderne permettant de générer des datasets d\'entraînement de haute qualité pour le fine-tuning de modèles d\'IA. Architecture 100% locale garantissant la confidentialité des données avec workflow en 3 étapes.',
+      image: '/images/localforge-ai.jpg',
+      icon: <Cpu className="w-6 h-6" />,
+      technologies: ['React', 'TypeScript', 'Rust', 'Tauri', 'Tailwind', 'AI/LLM'],
+      color: 'from-green-500 to-emerald-500'
+    },
     {
       id: 'learning-english',
       title: 'Learning English',
