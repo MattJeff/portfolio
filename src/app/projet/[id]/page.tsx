@@ -133,6 +133,45 @@ const projectsData = {
       'Export/import de collections de cartes'
     ],
     images: ['/images/romane-app-1.jpg', '/images/romane-app-2.jpg']
+  },
+  'squizer-api': {
+    title: 'Squizer API - Backend de Chat Vidéo Social',
+    year: '2025',
+    client: 'Projet Professionnel',
+    description: `Squizer est une API backend complète pour une plateforme de chat vidéo social en temps réel. L'application permet aux utilisateurs de se connecter via vidéo avec des personnes proches géographiquement, offrant une expérience sociale innovante basée sur la proximité et les intérêts communs.
+
+    L'architecture repose sur Django REST Framework pour exposer une API robuste et scalable, utilisée par des applications mobiles iOS et Android. Le système de matching géolocalisé utilise PostGIS pour effectuer des requêtes spatiales performantes et trouver des utilisateurs à proximité.
+
+    Le projet se distingue par son système de chat vidéo en temps réel basé sur WebRTC via OpenTok, permettant des sessions vidéo de haute qualité avec une latence minimale. L'architecture asynchrone avec Redis et RQ (Redis Queue) assure un traitement efficace des tâches en arrière-plan et des notifications push en temps réel.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture distribuée avec workers asynchrones pour traitement temps réel
+    - Matching géolocalisé performant avec calculs de distance en temps réel
+    - Gestion des sessions WebRTC et synchronisation des états de connexion
+    - Système de signaling bidirectionnel via OpenTok pour événements vidéo
+    - Webhooks pour gérer les événements de connexion/déconnexion
+    - Architecture multi-plateforme (iOS/Android) avec API unifiée
+    - Gestion de l'état utilisateur (en ligne/hors ligne/en appel) avec cohérence`,
+    solution: `J'ai développé une architecture Django modulaire avec apps dédiées (users, chat, webrtc, commands) pour une séparation claire des responsabilités. Le système de géolocalisation utilise PostGIS avec des fonctions spatiales optimisées pour le matching par distance. Les sessions WebRTC sont gérées via OpenTok avec un système de tokens sécurisés et de rooms dynamiques. Redis Queue avec trois niveaux de priorité (high/default/low) traite les tâches asynchrones comme les notifications et le matching. L'authentification multi-plateformes (Facebook, Apple, Phone) via django-allauth offre une expérience utilisateur fluide. AWS S3 stocke les médias et PostgreSQL avec PostGIS gère les données relationnelles et géospatiales.`,
+    technologies: ['Django 2.1', 'Django REST Framework', 'Python 3.6', 'PostgreSQL 9.6', 'PostGIS', 'Redis', 'django-rq', 'OpenTok', 'WebRTC', 'AWS S3', 'boto3', 'Gunicorn', 'Nginx', 'OneSignal', 'django-allauth', 'OAuth2', 'Mailjet', 'New Relic'],
+    features: [
+      'Matching géolocalisé avec PostGIS et calculs de distance',
+      'Chat vidéo 1-to-1 en temps réel via WebRTC/OpenTok',
+      'Système d\'amis et appels directs entre contacts',
+      'Authentification multi-plateformes (Facebook, Apple, Phone)',
+      'Workers asynchrones avec Redis Queue (priorités multiples)',
+      'Notifications push temps réel via OneSignal',
+      'Webhooks OpenTok pour événements vidéo',
+      'Gestion d\'état utilisateur (online/offline/calling)',
+      'API REST complète avec documentation Swagger',
+      'Stockage médias sur AWS S3',
+      'Soft delete pour préservation des données',
+      'Système de signaling bidirectionnel',
+      'Architecture modulaire (users, chat, webrtc)',
+      'CORS configuré pour mobile/web',
+      'Monitoring avec New Relic',
+      'Emails transactionnels via Mailjet'
+    ],
+    images: ['/images/squizer-api-1.jpg', '/images/squizer-api-2.jpg']
   }
 }
 

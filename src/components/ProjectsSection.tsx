@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot } from 'lucide-react'
+import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot, Database } from 'lucide-react'
 
 const ProjectsSection = () => {
   const projects = [
@@ -47,6 +47,17 @@ const ProjectsSection = () => {
       icon: <Smartphone className="w-6 h-6" />,
       technologies: ['Swift', 'SwiftUI', 'Core Data', 'AVFoundation', 'CloudKit'],
       color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'squizer-api',
+      title: 'Squizer API',
+      subtitle: 'API Backend de Chat Vidéo Social',
+      year: '2025',
+      description: 'Plateforme de chat vidéo en temps réel avec matching géolocalisé et WebRTC. Architecture REST Django pour mobile/web avec système d\'amis et appels directs.',
+      image: '/images/squizer-api.jpg',
+      icon: <Database className="w-6 h-6" />,
+      technologies: ['Django', 'PostgreSQL', 'Redis', 'WebRTC', 'PostGIS', 'AWS', 'REST API', 'OpenTok'],
+      color: 'from-red-500 to-orange-500'
     }
   ]
 
