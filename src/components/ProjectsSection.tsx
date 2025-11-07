@@ -40,12 +40,12 @@ const ProjectsSection = () => {
     {
       id: 'romane-app',
       title: 'Romane App',
-      subtitle: 'Application iOS',
+      subtitle: 'Application iOS Éducative',
       year: '2022',
-      description: 'Application mobile iOS complète avec interface intuitive et fonctionnalités avancées pour une expérience utilisateur optimale.',
+      description: 'Application éducative iOS basée sur les flashcards avec algorithme de révision espacée intelligent. Disponible en deux versions : mobile indépendante pour étudiants et intégrée aux établissements scolaires. Cartes personnalisables avec texte, images, vidéos et audio.',
       image: '/images/romane-app.jpg',
       icon: <Smartphone className="w-6 h-6" />,
-      technologies: ['Swift', 'SwiftUI', 'UIKit', 'Core Data'],
+      technologies: ['Swift', 'SwiftUI', 'Core Data', 'AVFoundation', 'CloudKit'],
       color: 'from-purple-500 to-pink-500'
     }
   ]

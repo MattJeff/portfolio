@@ -101,28 +101,36 @@ const projectsData = {
     images: ['/images/learning-english-1.jpg', '/images/learning-english-2.jpg']
   },
   'romane-app': {
-    title: 'Romane App - Application iOS',
+    title: 'Romane App - Application iOS Éducative',
     year: '2022',
-    client: 'Client Privé',
-    description: `Romane App est une application iOS complète développée pour répondre aux besoins spécifiques d'une entreprise de services. Cette application mobile native offre une expérience utilisateur fluide et intuitive.
-    
-    L'application intègre des fonctionnalités avancées de gestion de contenu, un système de notifications push personnalisées, et une interface utilisateur moderne suivant les dernières guidelines d'Apple.
-    
-    Le projet a nécessité une étroite collaboration avec le client pour comprendre et implémenter des workflows métier complexes tout en maintenant une simplicité d'utilisation pour l'utilisateur final.`,
-    challenges: `Les défis principaux du projet :
-    - Gestion de données offline avec synchronisation
-    - Optimisation des performances pour des grandes quantités de données
-    - Intégration avec des systèmes backend existants
-    - Support multi-langue et accessibilité`,
-    solution: `J'ai implémenté une architecture MVVM robuste avec Core Data pour la persistance des données. L'utilisation de SwiftUI a permis de créer une interface réactive et moderne. Un système de cache intelligent assure une expérience fluide même en mode offline.`,
-    technologies: ['Swift', 'SwiftUI', 'UIKit', 'Core Data', 'CloudKit', 'Push Notifications', 'REST API'],
+    client: 'Projet Éducatif',
+    description: `Romane est une application éducative iOS innovante basée sur le système des flashcards (cartes de révision). L'application permet aux utilisateurs de créer leurs propres cartes avec une question sur le recto et la réponse au verso, facilitant la mémorisation active et l'apprentissage personnalisé.
+
+    L'application se distingue par son algorithme intelligent de révision espacée qui présente plus fréquemment les cartes que l'utilisateur maîtrise le moins bien, permettant une mémorisation optimale à long terme. Cette approche scientifique de l'apprentissage maximise la rétention des connaissances.
+
+    Romane existe en deux versions : une version mobile indépendante pour les étudiants qui souhaitent réviser de manière autonome, et une version intégrée aux établissements scolaires comme outil d'enseignement moderne. L'objectif est de synchroniser l'école avec les nouvelles technologies et de permettre aux étudiants de réviser n'importe où et n'importe quand.`,
+    challenges: `Les défis techniques majeurs :
+    - Implémentation d'un algorithme de révision espacée performant
+    - Gestion de médias multiples (images, vidéos, audio) dans les cartes
+    - Synchronisation des données entre version mobile et scolaire
+    - Optimisation des performances avec de grandes collections de cartes
+    - Interface SwiftUI intuitive et engageante pour l'apprentissage
+    - Système d'auto-évaluation simple mais efficace`,
+    solution: `J'ai développé une architecture SwiftUI moderne avec Core Data pour la persistance locale. L'algorithme de révision espacée analyse les auto-évaluations des utilisateurs (système de couleurs : vert pour "parfaitement connu", orange pour "moyennement", rouge pour "pas du tout") et ajuste dynamiquement la fréquence de présentation. AVFoundation gère les médias audio/vidéo, tandis que CloudKit assure la synchronisation entre appareils et la version scolaire. L'interface drag & drop et les animations fluides rendent l'expérience d'apprentissage engageante.`,
+    technologies: ['Swift', 'SwiftUI', 'Core Data', 'AVFoundation', 'CloudKit', 'Combine', 'PhotoKit', 'UserNotifications'],
     features: [
-      'Interface utilisateur moderne avec SwiftUI',
-      'Mode offline avec synchronisation automatique',
-      'Notifications push personnalisées',
-      'Authentification sécurisée avec biométrie',
-      'Support multi-langue (FR, EN, ES)',
-      'Analytics et tableaux de bord intégrés'
+      'Création de flashcards personnalisées (recto/verso)',
+      'Support multimédia (texte, images, vidéos, audio)',
+      'Algorithme de révision espacée intelligent',
+      'Système d\'auto-évaluation par couleurs (vert/orange/rouge)',
+      'Deux versions : mobile indépendante et scolaire',
+      'Synchronisation CloudKit entre appareils',
+      'Mode révision optimisé pour mémorisation long terme',
+      'Statistiques de progression et analytics',
+      'Interface SwiftUI moderne et intuitive',
+      'Mode offline complet',
+      'Notifications de révision programmées',
+      'Export/import de collections de cartes'
     ],
     images: ['/images/romane-app-1.jpg', '/images/romane-app-2.jpg']
   }
