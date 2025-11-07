@@ -114,7 +114,7 @@ npm run start
 
 ## 📧 Contact
 
-- **Email**: mathis.higuinen@email.com
+- **Email**: mhiguinen235@gmail.com
 - **Téléphone**: 07 58 76 07 38
 - **Adresse**: 22 Allée des Asturies, 35000 Rennes
 

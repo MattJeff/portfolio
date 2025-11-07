@@ -86,7 +86,7 @@ Bonne journée !
 ```
 
 **Settings (Paramètres) :**
-- To Email: `mathis.higuinen@email.com` (ou votre email principal)
+- To Email: `mhiguinen235@gmail.com` (ou votre email principal)
 - From Name: `Portfolio - Devis`
 - Reply To: `{{reply_to}}`
 
@@ -133,7 +133,7 @@ Votre portfolio
 ```
 
 **Settings :**
-- To Email: `mathis.higuinen@email.com`
+- To Email: `mhiguinen235@gmail.com`
 - From Name: `Portfolio - Contact`
 - Reply To: `{{reply_to}}`
 

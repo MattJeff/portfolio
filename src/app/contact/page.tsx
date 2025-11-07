@@ -412,11 +412,11 @@ export default function ContactPage() {
                   <span>07 58 76 07 38</span>
                 </a>
                 <a
-                  href="mailto:mathis.higuinen@email.com"
+                  href="mailto:mhiguinen235@gmail.com"
                   className="flex items-center space-x-3 text-gray-400 hover:text-primary transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>mathis.higuinen@email.com</span>
+                  <span>mhiguinen235@gmail.com</span>
                 </a>
               </div>
             </div>
