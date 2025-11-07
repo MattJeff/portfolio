@@ -1,9 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
-import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu } from 'lucide-react'
+import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot } from 'lucide-react'
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      id: 'solana-trading-bot',
+      title: 'Solana Trading Bot',
+      subtitle: 'Bot Telegram',
+      year: '2025',
+      description: 'Bot de trading automatisé sur la blockchain Solana avec copy-trading, sniping de tokens, DCA (Dollar Cost Averaging), et gestion de positions en temps réel via Telegram. Architecture événementielle avec Kafka pour le traitement distribué des ordres.',
+      image: '/images/solana-trading-bot.jpg',
+      icon: <Bot className="w-6 h-6" />,
+      technologies: ['Node.js', 'Solana Web3.js', 'Kafka', 'Telegram Bot API', 'Docker', 'gRPC', 'Canvas', 'Protobuf'],
+      color: 'from-cyan-500 to-blue-500'
+    },
     {
       id: 'localforge-ai',
       title: 'LocalForge AI',
@@ -47,7 +58,7 @@ const ProjectsSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="group relative overflow-hidden rounded-xl bg-dark-800 border border-dark-600 hover:border-primary transition-all duration-300"

@@ -8,6 +8,40 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Code2, Layers } from 'lucide-react'
 
 const projectsData = {
+  'solana-trading-bot': {
+    title: 'Solana Trading Bot - Bot Telegram',
+    year: '2025',
+    client: 'Projet Professionnel',
+    description: `Bot de trading automatisé sur la blockchain Solana avec interface Telegram, permettant aux traders de gérer leurs positions de manière professionnelle. Le bot offre des fonctionnalités avancées comme le copy-trading, le sniping de nouveaux tokens, et le DCA (Dollar Cost Averaging).
+
+    L'architecture événementielle basée sur Kafka permet un traitement distribué et scalable des ordres de trading. Le système gère des milliers de transactions par seconde avec une latence minimale, essentiel pour le trading haute fréquence sur Solana.
+
+    Le projet se distingue par son interface Telegram intuitive qui génère des cartes PNL visuelles, permettant aux utilisateurs de suivre leurs performances en temps réel. Le système multi-langues et le programme de référence intégré facilitent l'adoption à l'échelle internationale.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture distribuée avec Kafka pour traitement temps réel
+    - Gestion de la complexité des ordres blockchain (transactions, slippage, MEV)
+    - Synchronisation des états utilisateur entre services distribués
+    - Optimisation des endpoints RPC Solana pour haute disponibilité
+    - Génération dynamique d'images PNL avec Canvas dans Node.js
+    - Sniping de tokens avec latence ultra-faible (<100ms)`,
+    solution: `J'ai développé une architecture microservices événementielle avec Kafka comme backbone de communication. Chaque fonctionnalité (copy-trading, DCA, positions, transactions) est isolée dans un service dédié communiquant via gRPC/Protobuf pour des performances optimales. Le RPC Manager implémente un système de failover automatique entre plusieurs endpoints Solana. L'intégration Telegram utilise un système de state machine pour gérer les conversations complexes. Le système de génération de cartes PNL utilise Canvas pour créer des visualisations graphiques riches directement dans le bot.`,
+    technologies: ['Node.js', 'ES Modules', 'Solana Web3.js', 'Kafka', 'Docker', 'Alpine Linux', 'gRPC', 'Protobuf', 'Telegram Bot API', 'Canvas', 'QRCode', 'RPC Manager'],
+    features: [
+      'Copy Trading avec synchronisation Kafka temps réel',
+      'Token Sniping automatisé avec détection de nouveaux tokens',
+      'DCA (Dollar Cost Averaging) personnalisable',
+      'Gestion de positions multi-wallets',
+      'Ordres limites avec exécution automatique',
+      'Génération de cartes PNL graphiques avec Canvas',
+      'Système de référence intégré',
+      'Interface multi-langues (EN/FR/ES)',
+      'QR codes pour dépôts wallet',
+      'Architecture microservices distribuée',
+      'Monitoring et analytics en temps réel',
+      'Gestion d\'état utilisateur persistante'
+    ],
+    images: ['/images/solana-trading-bot-1.jpg', '/images/solana-trading-bot-2.jpg']
+  },
   'localforge-ai': {
     title: 'LocalForge AI - Dataset Generator',
     year: '2025',
