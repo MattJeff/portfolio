@@ -172,6 +172,46 @@ const projectsData = {
       'Emails transactionnels via Mailjet'
     ],
     images: ['/images/squizer-api-1.jpg', '/images/squizer-api-2.jpg']
+  },
+  'solovault': {
+    title: 'SoloVault - Base de données SaaS Solo',
+    year: '2025',
+    client: 'Projet Commercial',
+    description: `SoloVault est une plateforme web innovante proposant une base de données complète de plus de 50 projets SaaS développés par des solopreneurs. Cette ressource unique permet aux entrepreneurs et développeurs de découvrir, filtrer et analyser des projets SaaS réussis pour s'inspirer et comprendre les tendances du marché.
+
+    L'application offre une expérience utilisateur optimale avec un système de filtres avancés multi-critères permettant de rechercher des projets par catégorie, technologies utilisées, modèle de revenus, et autres métriques pertinentes. L'export Excel personnalisable facilite l'analyse approfondie des données hors ligne.
+
+    Le projet intègre Stripe pour gérer les paiements sécurisés, permettant aux utilisateurs d'acheter l'accès à la base de données complète. L'architecture moderne Next.js 16 avec App Router et Turbopack garantit des performances optimales et une expérience utilisateur fluide. Le design responsive et le mode sombre/clair avec persistance assurent une accessibilité maximale sur tous les appareils.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture Next.js 16 avec App Router et Turbopack pour performances optimales
+    - Système de filtres dynamiques multi-critères avec gestion d'état complexe
+    - Intégration paiement Stripe sécurisé avec gestion des webhooks
+    - Génération Excel personnalisable avec SheetJS (XLSX) côté client
+    - Persistence du thème (dark/light) avec synchronisation localStorage
+    - Communication inter-composants via Custom Events
+    - Design responsive mobile-first avec Tailwind CSS
+    - Validation de formulaires avec gestion d'erreurs robuste`,
+    solution: `J'ai développé une architecture moderne utilisant Next.js 16 avec l'App Router et Turbopack pour des performances de build exceptionnelles. Le système de filtres utilise le state management local (useState/useEffect) avec des Custom Events pour synchroniser les composants de manière performante. L'intégration Stripe gère les paiements avec un système de sessions sécurisées et de webhooks pour la confirmation des transactions. La génération Excel utilise SheetJS côté client pour créer des exports personnalisés sans surcharge serveur. Le mode sombre/clair utilise localStorage avec un système de persistance intelligent évitant le flash au chargement. EmailJS permet d'envoyer des notifications de contact sans backend dédié. React 19 avec Hooks et Suspense assure une UI réactive et moderne.`,
+    technologies: ['Next.js 16.0.1', 'React 19', 'TypeScript', 'Tailwind CSS', 'App Router', 'Turbopack', 'Stripe Payment API', 'SheetJS (XLSX)', 'EmailJS', 'Lucide React', 'Next.js API Routes', 'localStorage'],
+    features: [
+      'Base de données de 50+ projets SaaS solopreneurs',
+      'Système de filtres dynamiques multi-critères',
+      'Export Excel personnalisable avec SheetJS',
+      'Paiement sécurisé via Stripe Payment API',
+      'Mode clair/sombre avec persistance localStorage',
+      'Design responsive mobile-first',
+      'Server & Client Components (Next.js 16)',
+      'Formulaire de contact avec EmailJS',
+      'Validation de formulaires robuste',
+      'Custom Events pour communication inter-composants',
+      'App Router avec Turbopack pour performances optimales',
+      'Interface utilisateur avec Lucide React icons',
+      'Gestion d\'état locale (useState/useEffect)',
+      'Architecture modulaire et scalable',
+      'SEO optimisé avec Next.js metadata',
+      'Expérience utilisateur fluide et intuitive'
+    ],
+    images: ['/images/solovault-1.jpg', '/images/solovault-2.jpg']
   }
 }
 

@@ -58,6 +58,17 @@ const ProjectsSection = () => {
       icon: <Database className="w-6 h-6" />,
       technologies: ['Django', 'PostgreSQL', 'Redis', 'WebRTC', 'PostGIS', 'AWS', 'REST API', 'OpenTok'],
       color: 'from-red-500 to-orange-500'
+    },
+    {
+      id: 'solovault',
+      title: 'SoloVault',
+      subtitle: 'Base de données SaaS solo',
+      year: '2025',
+      description: 'Plateforme web de vente d\'une base de données de 50+ projets SaaS solopreneurs avec filtres avancés, paiement Stripe et export Excel. Inclut dark/light mode et design responsive.',
+      image: '/images/solovault.jpg',
+      icon: <Database className="w-6 h-6" />,
+      technologies: ['Next.js', 'TypeScript', 'Tailwind', 'Stripe', 'XLSX', 'EmailJS'],
+      color: 'from-indigo-500 to-purple-500'
     }
   ]
 
