@@ -256,73 +256,77 @@ export default function ProjectDetailPage() {
 
         {/* Project Header */}
         <section className="section-padding py-12 bg-gradient-to-b from-dark-800/50 to-transparent">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Info */}
-              <div>
-                <h1 className="text-white mb-6">{project.title}</h1>
-                
-                <div className="flex flex-wrap gap-4 mb-6">
-                  <div className="flex items-center text-gray-400">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    <span>{project.year}</span>
-                  </div>
-                  <div className="flex items-center text-gray-400">
-                    <User className="w-5 h-5 mr-2" />
-                    <span>{project.client}</span>
-                  </div>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-white mb-6">{project.title}</h1>
 
-                {'link' in project && project.link && (
-                  <div className="mb-6">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center"
-                    >
-                      Voir le projet en ligne
-                      <ExternalLink className="w-5 h-5 ml-2" />
-                    </a>
-                  </div>
-                )}
-
-                <div className="space-y-4 text-gray-300 leading-relaxed">
-                  {project.description.split('\n\n').map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
-
-                {/* Technologies */}
-                <div className="mt-8">
-                  <h3 className="text-xl text-white mb-4 flex items-center">
-                    <Code2 className="w-5 h-5 mr-2 text-primary" />
-                    Technologies Utilisées
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1.5 bg-dark-700 text-gray-300 rounded-md text-sm border border-dark-600"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex items-center text-gray-400">
+                <Calendar className="w-5 h-5 mr-2" />
+                <span>{project.year}</span>
               </div>
+              <div className="flex items-center text-gray-400">
+                <User className="w-5 h-5 mr-2" />
+                <span>{project.client}</span>
+              </div>
+            </div>
 
-              {/* Right Column - Image */}
-              <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-dark-700 to-dark-900 rounded-xl overflow-hidden border border-dark-600">
+            {'link' in project && project.link && (
+              <div className="mb-6">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center"
+                >
+                  Voir le projet en ligne
+                  <ExternalLink className="w-5 h-5 ml-2" />
+                </a>
+              </div>
+            )}
+
+            <div className="space-y-4 text-gray-300 leading-relaxed mb-8">
+              {project.description.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+
+            {/* Project Image */}
+            <div className="relative mb-8">
+              <div className="relative h-96 bg-gradient-to-br from-dark-700 to-dark-900 rounded-xl overflow-hidden border border-dark-600">
+                {project.images && project.images[0] ? (
                   <Image
                     src={project.images[0]}
                     alt={project.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="100vw"
                   />
-                </div>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <Layers className="w-20 h-20 text-primary/30 mx-auto mb-4" />
+                      <p className="text-gray-500">Aperçu du projet</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Technologies */}
+            <div className="mt-8">
+              <h3 className="text-xl text-white mb-4 flex items-center">
+                <Code2 className="w-5 h-5 mr-2 text-primary" />
+                Technologies Utilisées
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1.5 bg-dark-700 text-gray-300 rounded-md text-sm border border-dark-600"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

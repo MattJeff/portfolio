@@ -90,14 +90,31 @@ const ProjectsSection = () => {
             >
               {/* Project Image/Placeholder */}
               <div className="relative h-64 bg-gradient-to-br from-dark-700 to-dark-900 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10`}></div>
+                {project.image && (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10`}></div>
+                  </>
+                )}
+                {!project.image && (
+                  <>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`}></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-20 h-20 bg-dark-800/80 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                          <div className="text-primary">{project.icon}</div>
+                        </div>
+                        <p className="text-gray-400">Aperçu du projet</p>
+                      </div>
+                    </div>
+                  </>
+                )}
 
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
