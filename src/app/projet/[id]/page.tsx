@@ -272,7 +272,7 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                {project.link && (
+                {'link' in project && project.link && (
                   <div className="mb-6">
                     <a
                       href={project.link}
