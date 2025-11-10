@@ -78,10 +78,11 @@ const projectsData = {
     title: 'Learning English - Extension Chrome',
     year: '2025',
     client: 'Projet Personnel',
-    description: `Learning English est une extension Chrome révolutionnaire qui transforme Netflix en plateforme d'apprentissage de l'anglais. 
-    
+    link: 'https://chromewebstore.google.com/detail/streaming-english-learner/ihpcbahpgelkeebgolejlpipcogffacd',
+    description: `Learning English est une extension Chrome révolutionnaire qui transforme Netflix en plateforme d'apprentissage de l'anglais.
+
     Cette extension permet aux utilisateurs d'apprendre l'anglais de manière immersive en regardant leurs séries et films préférés. Elle offre des sous-titres interactifs avec traduction instantanée, des quiz contextuels basés sur le contenu visionné, et un système de révision des mots appris.
-    
+
     Le projet a été conçu pour répondre au besoin croissant d'outils d'apprentissage linguistique engageants et pratiques. En utilisant du contenu que les utilisateurs consomment déjà, l'extension rend l'apprentissage naturel et motivant.`,
     challenges: `Les principaux défis rencontrés :
     - Synchronisation précise avec le lecteur vidéo Netflix
@@ -177,6 +178,7 @@ const projectsData = {
     title: 'SoloVault - Base de données SaaS Solo',
     year: '2025',
     client: 'Projet Commercial',
+    link: 'https://solo-vault-git-main-mathis-projects-5e16dcfb.vercel.app',
     description: `SoloVault est une plateforme web innovante proposant une base de données complète de plus de 50 projets SaaS développés par des solopreneurs. Cette ressource unique permet aux entrepreneurs et développeurs de découvrir, filtrer et analyser des projets SaaS réussis pour s'inspirer et comprendre les tendances du marché.
 
     L'application offre une expérience utilisateur optimale avec un système de filtres avancés multi-critères permettant de rechercher des projets par catégorie, technologies utilisées, modèle de revenus, et autres métriques pertinentes. L'export Excel personnalisable facilite l'analyse approfondie des données hors ligne.
@@ -269,6 +271,20 @@ export default function ProjectDetailPage() {
                     <span>{project.client}</span>
                   </div>
                 </div>
+
+                {project.link && (
+                  <div className="mb-6">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center"
+                    >
+                      Voir le projet en ligne
+                      <ExternalLink className="w-5 h-5 ml-2" />
+                    </a>
+                  </div>
+                )}
 
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   {project.description.split('\n\n').map((paragraph, index) => (

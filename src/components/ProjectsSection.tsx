@@ -35,7 +35,8 @@ const ProjectsSection = () => {
       image: '/images/learning-english.jpg',
       icon: <Chrome className="w-6 h-6" />,
       technologies: ['JavaScript', 'Chrome API', 'HTML5', 'CSS3'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      link: 'https://chromewebstore.google.com/detail/streaming-english-learner/ihpcbahpgelkeebgolejlpipcogffacd'
     },
     {
       id: 'romane-app',
@@ -68,7 +69,8 @@ const ProjectsSection = () => {
       image: '/images/solovault.jpg',
       icon: <Database className="w-6 h-6" />,
       technologies: ['Next.js', 'TypeScript', 'Tailwind', 'Stripe', 'XLSX', 'EmailJS'],
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-indigo-500 to-purple-500',
+      link: 'https://solo-vault-git-main-mathis-projects-5e16dcfb.vercel.app'
     }
   ]
 
