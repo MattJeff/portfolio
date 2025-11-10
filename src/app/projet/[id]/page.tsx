@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
@@ -314,12 +315,13 @@ export default function ProjectDetailPage() {
               {/* Right Column - Image */}
               <div className="relative">
                 <div className="aspect-video bg-gradient-to-br from-dark-700 to-dark-900 rounded-xl overflow-hidden border border-dark-600">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <Layers className="w-20 h-20 text-primary/30 mx-auto mb-4" />
-                      <p className="text-gray-500">Aperçu du projet</p>
-                    </div>
-                  </div>
+                  <Image
+                    src={project.images[0]}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             </div>
