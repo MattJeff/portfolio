@@ -112,12 +112,31 @@ export default function ContactPage() {
         throw new Error('Configuration EmailJS manquante. Avez-vous redémarré le serveur ?')
       }
 
+      // Séparer le prénom et le nom
+      const nameParts = contactForm.name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
+
+      // Formater la date
+      const now = new Date()
+      const timestamp = now.toLocaleDateString('fr-FR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+
       const templateParams = {
-        to_name: 'Mathis',
-        from_name: contactForm.name,
-        from_email: contactForm.email,
+        subject: `💬 Nouveau message de ${contactForm.name}`,
         message: contactForm.message,
-        reply_to: contactForm.email
+        firstName: firstName,
+        lastName: lastName,
+        email: contactForm.email,
+        reply_to: contactForm.email,
+        source: 'Portfolio - Formulaire de contact',
+        page: window.location.pathname,
+        timestamp: timestamp
       }
 
       console.log('Template params:', templateParams)
