@@ -15,7 +15,8 @@ const ProjectsSection = () => {
       icon: <GraduationCap className="w-6 h-6" />,
       technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Supabase', 'PostgreSQL', 'Stripe Connect', 'Tailwind CSS', 'Monaco Editor', 'Playwright', 'Resend', 'Sentry'],
       color: 'from-violet-500 to-purple-500',
-      link: 'https://formation-web-kappa.vercel.app'
+      link: 'https://formation-web-kappa.vercel.app',
+      videoUrl: 'https://youtu.be/shlQcerB2L0'
     },
     {
       id: 'portfolio',
@@ -23,7 +24,6 @@ const ProjectsSection = () => {
       subtitle: 'Site web personnel',
       year: '2025',
       description: 'Portfolio développeur full-stack moderne avec design responsive, intégration EmailJS pour formulaires de contact, sections About/Skills/Journey/Projects. Développé avec Next.js 14 et TypeScript pour présenter 7 ans d\'expérience en développement.',
-      image: '/images/portfolio.jpg',
       icon: <Code2 className="w-6 h-6" />,
       technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Tailwind CSS', 'EmailJS', 'Vercel'],
       color: 'from-orange-500 to-red-500'
@@ -34,7 +34,6 @@ const ProjectsSection = () => {
       subtitle: 'Bot Telegram',
       year: '2025',
       description: 'Bot de trading automatisé sur la blockchain Solana avec copy-trading, sniping de tokens, DCA (Dollar Cost Averaging), et gestion de positions en temps réel via Telegram. Architecture événementielle avec Kafka pour le traitement distribué des ordres.',
-      image: '/images/solana-trading-bot.jpg',
       icon: <Bot className="w-6 h-6" />,
       technologies: ['Node.js', 'Solana Web3.js', 'Kafka', 'Telegram Bot API', 'Docker', 'gRPC', 'Canvas', 'Protobuf'],
       color: 'from-cyan-500 to-blue-500'
@@ -68,7 +67,6 @@ const ProjectsSection = () => {
       subtitle: 'Application iOS Éducative',
       year: '2022',
       description: 'Application éducative iOS basée sur les flashcards avec algorithme de révision espacée intelligent. Disponible en deux versions : mobile indépendante pour étudiants et intégrée aux établissements scolaires. Cartes personnalisables avec texte, images, vidéos et audio.',
-      image: '/images/romane-app.jpg',
       icon: <Smartphone className="w-6 h-6" />,
       technologies: ['Swift', 'SwiftUI', 'Core Data', 'AVFoundation', 'CloudKit'],
       color: 'from-purple-500 to-pink-500'
@@ -79,7 +77,6 @@ const ProjectsSection = () => {
       subtitle: 'API Backend de Chat Vidéo Social',
       year: '2025',
       description: 'Plateforme de chat vidéo en temps réel avec matching géolocalisé et WebRTC. Architecture REST Django pour mobile/web avec système d\'amis et appels directs.',
-      image: '/images/squizer-api.jpg',
       icon: <Database className="w-6 h-6" />,
       technologies: ['Django', 'PostgreSQL', 'Redis', 'WebRTC', 'PostGIS', 'AWS', 'REST API', 'OpenTok'],
       color: 'from-red-500 to-orange-500'

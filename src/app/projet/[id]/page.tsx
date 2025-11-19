@@ -14,6 +14,7 @@ const projectsData = {
     year: '2025',
     client: 'Projet Commercial',
     link: 'https://formation-web-kappa.vercel.app',
+    videoUrl: 'https://youtu.be/shlQcerB2L0',
     description: `SkillForge est une plateforme LMS (Learning Management System) nouvelle génération permettant aux créateurs de vendre leurs cours en ligne avec un système de commission automatisé. La plateforme prend 4% de commission tandis que le créateur conserve 96% des revenus, créant un écosystème équitable pour tous.
 
     La plateforme intègre un IDE interactif basé sur Monaco Editor, permettant aux apprenants de pratiquer directement dans le navigateur. Le système de paiement via Stripe Connect automatise entièrement la distribution des revenus entre la plateforme et les créateurs.
@@ -94,7 +95,7 @@ const projectsData = {
       'TypeScript pour type safety',
       'Déploiement Vercel avec CDN'
     ],
-    images: ['/images/portfolio.jpg']
+    images: []
   },
   'solana-trading-bot': {
     title: 'Solana Trading Bot - Bot Telegram',
@@ -128,7 +129,7 @@ const projectsData = {
       'Monitoring et analytics en temps réel',
       'Gestion d\'état utilisateur persistante'
     ],
-    images: ['/images/solana-trading-bot-1.jpg', '/images/solana-trading-bot-2.jpg']
+    images: []
   },
   'localforge-ai': {
     title: 'LocalForge AI - Dataset Generator',
@@ -221,7 +222,7 @@ const projectsData = {
       'Notifications de révision programmées',
       'Export/import de collections de cartes'
     ],
-    images: ['/images/romane-app-1.jpg', '/images/romane-app-2.jpg']
+    images: []
   },
   'squizer-api': {
     title: 'Squizer API - Backend de Chat Vidéo Social',
@@ -260,7 +261,7 @@ const projectsData = {
       'Monitoring avec New Relic',
       'Emails transactionnels via Mailjet'
     ],
-    images: ['/images/squizer-api-1.jpg', '/images/squizer-api-2.jpg']
+    images: []
   },
   'solovault': {
     title: 'SoloVault - Base de données SaaS Solo',
@@ -398,6 +399,39 @@ export default function ProjectDetailPage() {
                 )}
               </div>
             </div>
+
+            {/* YouTube Video Player */}
+            {'videoUrl' in project && project.videoUrl && (() => {
+              // Extract YouTube video ID from different URL formats
+              const getYouTubeId = (url: string) => {
+                const patterns = [
+                  /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
+                  /youtube\.com\/embed\/([^&\n?#]+)/
+                ]
+                for (const pattern of patterns) {
+                  const match = url.match(pattern)
+                  if (match) return match[1]
+                }
+                return null
+              }
+
+              const videoId = getYouTubeId(project.videoUrl)
+
+              return videoId ? (
+                <div className="mb-8">
+                  <h3 className="text-xl text-white mb-4">Démonstration vidéo</h3>
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-xl border border-dark-600"
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title="Démonstration du projet"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              ) : null
+            })()}
 
             {/* Technologies */}
             <div className="mt-8">
