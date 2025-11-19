@@ -1,10 +1,33 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot, Database } from 'lucide-react'
+import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot, Database, GraduationCap, Code2 } from 'lucide-react'
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      id: 'skillforge',
+      title: 'SkillForge',
+      subtitle: 'Plateforme d\'apprentissage SaaS',
+      year: '2025',
+      description: 'Marketplace d\'apprentissage nouvelle génération avec système de monétisation pour créateurs. Paiements via Stripe Connect avec commission automatique 4%, IDE intégré Monaco Editor, et suivi de progression avancé. Inclut analytics créateur, certificats PDF auto-générés, et 15+ tests E2E.',
+      image: '/images/formation-illustration.png',
+      icon: <GraduationCap className="w-6 h-6" />,
+      technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Supabase', 'PostgreSQL', 'Stripe Connect', 'Tailwind CSS', 'Monaco Editor', 'Playwright', 'Resend', 'Sentry'],
+      color: 'from-violet-500 to-purple-500',
+      link: 'https://formation-web-kappa.vercel.app'
+    },
+    {
+      id: 'portfolio',
+      title: 'Portfolio Mathis Higuinen',
+      subtitle: 'Site web personnel',
+      year: '2025',
+      description: 'Portfolio développeur full-stack moderne avec design responsive, intégration EmailJS pour formulaires de contact, sections About/Skills/Journey/Projects. Développé avec Next.js 14 et TypeScript pour présenter 7 ans d\'expérience en développement.',
+      image: '/images/portfolio.jpg',
+      icon: <Code2 className="w-6 h-6" />,
+      technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Tailwind CSS', 'EmailJS', 'Vercel'],
+      color: 'from-orange-500 to-red-500'
+    },
     {
       id: 'solana-trading-bot',
       title: 'Solana Trading Bot',

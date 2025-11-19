@@ -9,6 +9,93 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Code2, Layers } from 'lucide-react'
 
 const projectsData = {
+  'skillforge': {
+    title: 'SkillForge - Plateforme d\'apprentissage SaaS',
+    year: '2025',
+    client: 'Projet Commercial',
+    link: 'https://formation-web-kappa.vercel.app',
+    description: `SkillForge est une plateforme LMS (Learning Management System) nouvelle génération permettant aux créateurs de vendre leurs cours en ligne avec un système de commission automatisé. La plateforme prend 4% de commission tandis que le créateur conserve 96% des revenus, créant un écosystème équitable pour tous.
+
+    La plateforme intègre un IDE interactif basé sur Monaco Editor, permettant aux apprenants de pratiquer directement dans le navigateur. Le système de paiement via Stripe Connect automatise entièrement la distribution des revenus entre la plateforme et les créateurs.
+
+    Le projet se distingue par ses analytics avancées pour les créateurs, la génération automatique de certificats PDF, un système de reviews, et une architecture monorepo Turborepo pour une scalabilité optimale. Plus de 15 tests E2E Playwright garantissent la qualité et la fiabilité du code en production.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture monorepo Turborepo avec multiples packages partagés
+    - Système de paiement Stripe Connect marketplace avec split automatique 4%/96%
+    - Intégration Monaco Editor pour IDE dans le navigateur avec coloration syntaxique
+    - Row Level Security (RLS) Supabase pour isolation multi-tenant
+    - Génération dynamique de certificats PDF avec données utilisateur
+    - Rate limiting avec Upstash Redis pour protection API
+    - Système de progression utilisateur avec tracking granulaire
+    - Architecture Next.js 14 App Router avec Server Components`,
+    solution: `J'ai développé une architecture Next.js 14 moderne utilisant l'App Router et les Server Components pour des performances optimales. Supabase avec PostgreSQL gère les données avec Row Level Security (RLS) pour isoler chaque tenant. Le système de paiement Stripe Connect gère automatiquement les commissions via webhooks sécurisés. Monaco Editor est intégré côté client avec code splitting pour optimiser le bundle. Le rate limiting via Upstash Redis protège contre les abus. Les certificats PDF sont générés dynamiquement avec les données utilisateur. Playwright avec 15+ tests E2E garantit la qualité. Sentry monitore les erreurs en production. L'architecture Turborepo permet de partager du code entre packages (UI, config, types).`,
+    technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Supabase', 'PostgreSQL', 'Stripe Connect', 'Tailwind CSS', 'Monaco Editor', 'Playwright', 'Resend', 'Sentry', 'Upstash Redis', 'Shadcn/UI', 'Turborepo', 'Vercel', 'Row Level Security', 'Webhooks', 'Framer Motion', 'Zustand'],
+    features: [
+      'Marketplace B2B2C avec commission automatique 4%/96%',
+      'IDE Monaco Editor intégré avec coloration syntaxique',
+      'Course player vidéo avec progression trackée',
+      'Dashboard analytics avancés pour créateurs',
+      'Génération automatique de certificats PDF',
+      'Système de reviews et ratings',
+      'Paiements via Stripe Connect avec webhooks',
+      'Row Level Security (RLS) pour isolation multi-tenant',
+      'Rate limiting avec Upstash Redis',
+      '15+ tests E2E Playwright automatisés',
+      'Monitoring Sentry pour erreurs production',
+      'Architecture monorepo Turborepo',
+      'Server & Client Components Next.js 14',
+      'Dark mode avec Tailwind CSS',
+      'Design responsive mobile-first',
+      'Emails transactionnels via Resend',
+      'Validation Zod et sanitization XSS',
+      'Gestion CRUD complète pour créateurs',
+      'Système d\'authentification Supabase',
+      '24 API endpoints REST',
+      '9 tables PostgreSQL avec RLS',
+      'Production-ready deployment sur Vercel'
+    ],
+    images: ['/images/formation-illustration.png']
+  },
+  'portfolio': {
+    title: 'Portfolio Mathis Higuinen',
+    year: '2025',
+    client: 'Projet Personnel',
+    description: `Portfolio développeur full-stack moderne présentant 7 ans d'expérience en développement logiciel. Le site met en avant mes compétences techniques, mon parcours professionnel, et mes projets significatifs à travers une interface élégante et responsive.
+
+    Le portfolio intègre EmailJS pour gérer les formulaires de contact (demandes de devis et messages généraux) sans nécessiter de backend dédié. L'architecture Next.js 14 avec TypeScript garantit des performances optimales et une maintenabilité du code.
+
+    Le design moderne utilise Tailwind CSS avec un thème sombre élégant, des animations subtiles, et une navigation fluide. Les sections About, Skills, Journey et Projects sont structurées pour guider naturellement le visiteur à travers mon profil professionnel.`,
+    challenges: `Les défis techniques majeurs :
+    - Architecture Next.js 14 App Router pour performances optimales
+    - Intégration EmailJS pour formulaires sans backend
+    - Design responsive mobile-first avec Tailwind CSS
+    - Gestion de multiples formulaires avec validation robuste
+    - Optimisation SEO et metadata dynamiques
+    - Animations fluides et transitions élégantes
+    - Structure de données modulaire pour projets`,
+    solution: `J'ai développé une architecture Next.js 14 moderne utilisant l'App Router et TypeScript pour un code type-safe. EmailJS gère les envois d'emails côté client avec deux templates distincts (devis et contact). Tailwind CSS assure un design responsive avec un système de tokens cohérent. Les composants sont modulaires et réutilisables (Header, Footer, Hero, etc.). Les images Next.js sont optimisées automatiquement. Le routing Next.js gère les pages projets dynamiques via [id]. Les formulaires utilisent le state React avec validation avant envoi. Le déploiement Vercel assure des performances optimales avec CDN global.`,
+    technologies: ['Next.js 14', 'TypeScript', 'React 18', 'Tailwind CSS', 'EmailJS', 'Vercel', 'Lucide React', 'Next.js Image', 'App Router'],
+    features: [
+      'Design responsive mobile-first',
+      'Section Hero avec présentation accrocheuse',
+      'Section About avec bio détaillée',
+      'Section Skills avec technologies maîtrisées',
+      'Section Journey avec parcours professionnel',
+      'Section Projects avec grille de projets',
+      'Deux formulaires EmailJS (devis et contact)',
+      'Pages détail projets dynamiques',
+      'Navigation fluide avec ancres',
+      'Optimisation images Next.js',
+      'SEO optimisé avec metadata',
+      'Thème sombre élégant',
+      'Animations subtiles',
+      'Footer avec liens sociaux',
+      'Architecture modulaire et scalable',
+      'TypeScript pour type safety',
+      'Déploiement Vercel avec CDN'
+    ],
+    images: ['/images/portfolio.jpg']
+  },
   'solana-trading-bot': {
     title: 'Solana Trading Bot - Bot Telegram',
     year: '2025',
