@@ -5,7 +5,6 @@ import FreelanceServices from '@/components/freelance/FreelanceServices'
 import FreelanceSkills from '@/components/freelance/FreelanceSkills'
 import FreelancePortfolio from '@/components/freelance/FreelancePortfolio'
 import FreelancePricing from '@/components/freelance/FreelancePricing'
-import FreelanceTestimonials from '@/components/freelance/FreelanceTestimonials'
 import FreelanceContact from '@/components/freelance/FreelanceContact'
 
 export const metadata = {
@@ -23,7 +22,6 @@ export default function FreelancePage() {
         <FreelanceSkills />
         <FreelancePortfolio />
         <FreelancePricing />
-        <FreelanceTestimonials />
         <FreelanceContact />
       </main>
       <Footer />
