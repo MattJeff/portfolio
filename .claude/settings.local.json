@@ -12,7 +12,10 @@
       "Bash(git commit:*)",
       "Bash(cat:*)",
       "Bash(xattr -l:*)",
-      "Bash(xattr -c:*)"
+      "Bash(xattr -c:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []

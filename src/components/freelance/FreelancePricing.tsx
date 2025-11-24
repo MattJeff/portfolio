@@ -107,14 +107,14 @@ const additionalServices = [
 
 export default function FreelancePricing() {
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section id="pricing" className="py-20 bg-dark-900">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Tarifs & Forfaits
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Solutions adaptées à votre budget et vos besoins
           </p>
         </div>
@@ -128,38 +128,38 @@ export default function FreelancePricing() {
                 key={index}
                 className={`rounded-2xl p-8 ${
                   pkg.popular
-                    ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-2xl scale-105 border-4 border-blue-400'
-                    : 'bg-gray-50 border-2 border-gray-200'
+                    ? 'bg-gradient-to-br bg-primary text-white shadow-2xl scale-105 border-4 border-blue-400'
+                    : 'bg-dark-800 border-2 border-dark-600'
                 } hover:shadow-2xl transition-all duration-300 relative`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-white px-4 py-1 rounded-full text-sm font-bold">
                     Le plus populaire
                   </div>
                 )}
 
                 {/* Icon & Name */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-3 rounded-xl ${pkg.popular ? 'bg-white/20' : 'bg-white'}`}>
-                    <Icon className={`w-6 h-6 ${pkg.popular ? 'text-white' : 'text-blue-600'}`} />
+                  <div className={`p-3 rounded-xl ${pkg.popular ? 'bg-dark-900/20' : 'bg-dark-900'}`}>
+                    <Icon className={`w-6 h-6 ${pkg.popular ? 'text-white' : 'text-primary'}`} />
                   </div>
-                  <h3 className={`text-2xl font-bold ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-2xl font-bold ${pkg.popular ? 'text-white' : 'text-white'}`}>
                     {pkg.name}
                   </h3>
                 </div>
 
                 {/* Price */}
                 <div className="mb-4">
-                  <div className={`text-4xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`text-4xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-white'}`}>
                     {pkg.price}
                   </div>
-                  <div className={`text-sm ${pkg.popular ? 'text-white/80' : 'text-gray-500'}`}>
+                  <div className={`text-sm ${pkg.popular ? 'text-white/80' : 'text-gray-400'}`}>
                     {pkg.currency} • {pkg.duration}
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className={`mb-6 ${pkg.popular ? 'text-white/90' : 'text-gray-600'}`}>
+                <p className={`mb-6 ${pkg.popular ? 'text-white/90' : 'text-gray-300'}`}>
                   {pkg.description}
                 </p>
 
@@ -168,7 +168,7 @@ export default function FreelancePricing() {
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-white' : 'text-green-500'}`} />
-                      <span className={`text-sm ${pkg.popular ? 'text-white/90' : 'text-gray-600'}`}>
+                      <span className={`text-sm ${pkg.popular ? 'text-white/90' : 'text-gray-300'}`}>
                         {feature}
                       </span>
                     </li>
@@ -177,11 +177,11 @@ export default function FreelancePricing() {
 
                 {/* CTA */}
                 <a
-                  href="#contact"
+                  href="/contact"
                   className={`block text-center py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
                     pkg.popular
-                      ? 'bg-white text-blue-600 hover:bg-gray-100'
-                      : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-xl'
+                      ? 'bg-white text-primary hover:bg-gray-100'
+                      : 'btn-primary'
                   }`}
                 >
                   {pkg.cta}
@@ -192,19 +192,19 @@ export default function FreelancePricing() {
         </div>
 
         {/* Additional Services */}
-        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <div className="bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-dark-600">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">
             Autres Services Disponibles
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300"
+                className="bg-dark-900 rounded-xl p-6 border border-dark-600 hover:shadow-lg transition-all duration-300"
               >
-                <h4 className="font-bold text-gray-900 mb-2">{service.name}</h4>
-                <div className="text-blue-600 font-semibold mb-1">{service.price}</div>
-                <div className="text-sm text-gray-500">Durée : {service.duration}</div>
+                <h4 className="font-bold text-white mb-2">{service.name}</h4>
+                <div className="text-primary font-semibold mb-1">{service.price}</div>
+                <div className="text-sm text-gray-400">Durée : {service.duration}</div>
               </div>
             ))}
           </div>
@@ -234,12 +234,12 @@ export default function FreelancePricing() {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4 text-lg">
-            Premier échange de 30min <strong className="text-blue-600">gratuit</strong> pour évaluer la faisabilité
+          <p className="text-gray-300 mb-4 text-lg">
+            Premier échange de 30min <strong className="text-primary">gratuit</strong> pour évaluer la faisabilité
           </p>
           <a
-            href="#contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
+            href="/contact"
+            className="btn-primary inline-block px-10 py-5 text-lg"
           >
             Demander un devis gratuit
           </a>
