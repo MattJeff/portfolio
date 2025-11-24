@@ -24,11 +24,18 @@ const Header = () => {
     { href: '#skills', label: 'Compétences' },
     { href: '#journey', label: 'Parcours' },
     { href: '#projects', label: 'Projets' },
+    { href: '/freelance', label: 'Services Freelance', isPage: true },
   ]
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isPage?: boolean) => {
     e.preventDefault()
     setIsMobileMenuOpen(false)
+
+    // Si c'est un lien vers une page, navigation directe
+    if (isPage) {
+      router.push(href)
+      return
+    }
 
     // Si on est sur la page d'accueil, scroll directement
     if (pathname === '/') {
@@ -68,7 +75,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e, link.href, link.isPage)}
                 className="text-gray-300 hover:text-primary transition-colors duration-200 cursor-pointer"
               >
                 {link.label}
@@ -99,7 +106,7 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={(e) => handleNavClick(e, link.href, link.isPage)}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 py-2 cursor-pointer"
                 >
                   {link.label}
