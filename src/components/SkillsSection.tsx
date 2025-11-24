@@ -76,7 +76,7 @@ const SkillsSection = () => {
             <div className="text-gray-400">Apps iOS</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">3+</div>
+            <div className="text-3xl font-bold text-primary">7+</div>
             <div className="text-gray-400">Années d'expérience</div>
           </div>
           <div className="text-center">
