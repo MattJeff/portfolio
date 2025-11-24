@@ -27,8 +27,8 @@ export default function FreelanceContact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-1">Email</h4>
-                  <a href="mailto:mathis.higuinen@example.com" className="text-primary hover:underline">
-                    mathis.higuinen@example.com
+                  <a href="mailto:mhiguinen235@gmail.com" className="text-primary hover:underline">
+                    mhiguinen235@gmail.com
                   </a>
                   <p className="text-sm text-gray-400 mt-1">Réponse sous 24h</p>
                 </div>
@@ -42,10 +42,10 @@ export default function FreelanceContact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-1">Téléphone</h4>
-                  <a href="tel:+33612345678" className="text-primary hover:underline">
-                    +33 6 12 34 56 78
+                  <a href="tel:0674578668" className="text-primary hover:underline">
+                    06 74 57 86 68
                   </a>
-                  <p className="text-sm text-gray-400 mt-1">Lun-Ven 9h-18h</p>
+                  <p className="text-sm text-gray-400 mt-1">WhatsApp disponible</p>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function FreelanceContact() {
                 <h4 className="font-semibold text-white mb-3">Autres options</h4>
                 <div className="space-y-3">
                   <a
-                    href="https://www.linkedin.com/in/mathis-higuinen"
+                    href="https://www.linkedin.com/in/mathis-higuinen-37578a392/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-gray-300 hover:text-primary transition-colors"

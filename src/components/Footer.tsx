@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <h3 className="text-primary mb-4">Contact</h3>
             <div className="space-y-3">
-              <a href="tel:0758760738" className="flex items-center space-x-2 text-gray-400 hover:text-primary transition-colors">
+              <a href="tel:0674578668" className="flex items-center space-x-2 text-gray-400 hover:text-primary transition-colors">
                 <Phone size={16} />
-                <span>07 58 76 07 38</span>
+                <span>06 74 57 86 68</span>
               </a>
               <a href="mailto:mhiguinen235@gmail.com" className="flex items-center space-x-2 text-gray-400 hover:text-primary transition-colors">
                 <Mail size={16} />
@@ -53,7 +53,7 @@ const Footer = () => {
             <h3 className="text-primary mb-4">Réseaux Sociaux</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/mathishiguinen"
+                href="https://github.com/MattJeff"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-dark-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-dark-600 transition-all"
@@ -61,7 +61,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/mathishiguinen"
+                href="https://www.linkedin.com/in/mathis-higuinen-37578a392/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-dark-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-dark-600 transition-all"

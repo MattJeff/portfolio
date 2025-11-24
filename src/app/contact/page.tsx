@@ -424,11 +424,11 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="mt-8 space-y-3">
                 <a
-                  href="tel:0758760738"
+                  href="tel:0674578668"
                   className="flex items-center space-x-3 text-gray-400 hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>07 58 76 07 38</span>
+                  <span>06 74 57 86 68 (WhatsApp)</span>
                 </a>
                 <a
                   href="mailto:mhiguinen235@gmail.com"
