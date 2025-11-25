@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, Github, Calendar, Chrome, Smartphone, Cpu, Bot, Database, GraduationCap, Code2 } from 'lucide-react'
+import { ExternalLink, Calendar, Chrome, Smartphone, Cpu, Bot, Database, GraduationCap, Code2 } from 'lucide-react'
 
 const ProjectsSection = () => {
   const projects = [
@@ -96,41 +96,45 @@ const ProjectsSection = () => {
   ]
 
   return (
-    <section id="projects" className="section-padding py-20 bg-dark-800/50">
+    <section id="projects" className="section-padding py-20 dark:bg-dark-800/50 bg-light-800/50" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center mb-12 text-white">
+        <h2 id="projects-heading" className="text-center mb-12 dark:text-white text-gray-900">
           Mes Projets <span className="text-primary">Significatifs</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div
+        <div className="grid md:grid-cols-2 gap-8" role="list" aria-label="Liste des projets">
+          {projects.map((project, index) => (
+            <article
               key={project.id}
-              className="group relative overflow-hidden rounded-xl bg-dark-800 border border-dark-600 hover:border-primary transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl dark:bg-dark-800 bg-white border dark:border-dark-600 border-light-600 hover:border-primary transition-all duration-300 shadow-sm"
+              role="listitem"
             >
               {/* Project Image/Placeholder */}
-              <div className="relative h-64 bg-gradient-to-br from-dark-700 to-dark-900 overflow-hidden">
+              <div className="relative h-64 bg-gradient-to-br dark:from-dark-700 dark:to-dark-900 from-gray-100 to-gray-200 overflow-hidden">
                 {project.image && (
                   <>
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`Capture d'écran du projet ${project.title}`}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                      loading={index < 2 ? "eager" : "lazy"}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhMQYTQWH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAAIDAQAAAAAAAAAAAAAAAAABAgMRIf/aAAwDAQACEQMRAD8Aw2CzmETRRzvCQoI2yEqdwzwRjkfRUr0Xjj0P/9k="
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10`} aria-hidden="true"></div>
                   </>
                 )}
                 {!project.image && (
                   <>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`} aria-hidden="true"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="w-20 h-20 bg-dark-800/80 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                          <div className="text-primary">{project.icon}</div>
+                        <div className="w-20 h-20 dark:bg-dark-800/80 bg-white/80 rounded-xl flex items-center justify-center mb-4 mx-auto shadow-sm">
+                          <div className="text-primary" aria-hidden="true">{project.icon}</div>
                         </div>
-                        <p className="text-gray-400">Aperçu du projet</p>
+                        <p className="dark:text-gray-400 text-gray-700">Aperçu du projet</p>
                       </div>
                     </div>
                   </>
@@ -141,15 +145,16 @@ const ProjectsSection = () => {
                   <div className="p-6 w-full">
                     <div className="flex items-center justify-between">
                       <span className="flex items-center text-gray-300">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {project.year}
+                        <Calendar className="w-4 h-4 mr-2" aria-hidden="true" />
+                        <time dateTime={project.year}>{project.year}</time>
                       </span>
                       <Link
                         href={`/projet/${project.id}`}
                         className="flex items-center text-primary hover:text-orange-400 transition-colors"
+                        aria-label={`Voir les détails du projet ${project.title}`}
                       >
                         Voir détails
-                        <ExternalLink className="w-4 h-4 ml-2" />
+                        <ExternalLink className="w-4 h-4 ml-2" aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -158,51 +163,52 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
+                <header className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold dark:text-white text-gray-900 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">{project.subtitle}</p>
+                    <p className="dark:text-gray-400 text-gray-500 text-sm">{project.subtitle}</p>
                   </div>
-                  <span className="text-primary text-sm font-semibold">{project.year}</span>
-                </div>
+                  <time dateTime={project.year} className="text-primary text-sm font-semibold">{project.year}</time>
+                </header>
 
-                <p className="text-gray-300 mb-4">
+                <p className="dark:text-gray-300 text-gray-700 mb-4">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <ul className="flex flex-wrap gap-2 mb-4" aria-label="Technologies utilisées">
                   {project.technologies.map((tech, techIndex) => (
-                    <span
+                    <li
                       key={techIndex}
-                      className="px-2 py-1 bg-dark-700 text-gray-400 rounded text-xs"
+                      className="px-2 py-1 dark:bg-dark-700 bg-light-700 dark:text-gray-400 text-gray-500 rounded text-xs"
                     >
                       {tech}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
                 {/* Action Button */}
                 <Link
                   href={`/projet/${project.id}`}
                   className="inline-flex items-center text-primary hover:text-orange-400 transition-colors group"
+                  aria-label={`En savoir plus sur ${project.title}`}
                 >
                   <span>Voir les détails</span>
-                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <p className="text-gray-400 mb-4">Intéressé par mon travail ?</p>
-          <Link href="/contact" className="btn-primary inline-flex items-center">
+          <p className="dark:text-gray-400 text-gray-500 mb-4">Intéressé par mon travail ?</p>
+          <Link href="/contact" className="btn-primary inline-flex items-center" aria-label="Me contacter pour discuter de votre projet">
             Discutons de votre projet
-            <ExternalLink className="w-5 h-5 ml-2" />
+            <ExternalLink className="w-5 h-5 ml-2" aria-hidden="true" />
           </Link>
         </div>
       </div>

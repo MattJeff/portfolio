@@ -62,14 +62,14 @@ const projects = [
 
 export default function FreelancePortfolio() {
   return (
-    <section className="py-20 bg-dark-900">
+    <section className="py-20 bg-light-900 dark:bg-dark-900">
       <div className="max-w-7xl mx-auto section-padding">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Projets Réalisés
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
             15+ projets livrés - Découvrez mes réalisations les plus marquantes
           </p>
         </div>
@@ -80,16 +80,16 @@ export default function FreelancePortfolio() {
             <Link
               key={index}
               href={`/projet/${project.id}`}
-              className="bg-dark-800 rounded-2xl overflow-hidden border border-dark-600 hover:border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-white dark:bg-dark-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-dark-600 hover:border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
               {/* Image Placeholder */}
               <div className="relative h-48 bg-gradient-to-br from-primary/20 to-orange-600/10 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-20">
+                  <div className="text-gray-900 dark:text-white text-6xl font-bold opacity-20">
                     {project.title[0]}
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-dark-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-white">
+                <div className="absolute top-4 right-4 bg-white/90 dark:bg-dark-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-900 dark:text-white">
                   {project.budget}
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function FreelancePortfolio() {
               {/* Content */}
               <div className="p-6">
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-primary font-medium mb-3">
@@ -105,7 +105,7 @@ export default function FreelancePortfolio() {
                 </p>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-4 leading-relaxed text-sm">
+                <p className="text-gray-700 dark:text-gray-400 mb-4 leading-relaxed text-sm">
                   {project.description}
                 </p>
 
@@ -114,7 +114,7 @@ export default function FreelancePortfolio() {
                   {project.achievements.map((achievement, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                       <Award className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-300">{achievement}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{achievement}</span>
                     </div>
                   ))}
                 </div>
@@ -145,7 +145,7 @@ export default function FreelancePortfolio() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-400 mb-4">
             Envie de voir tous les projets en détail ?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -166,12 +166,12 @@ export default function ContactPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding py-16 bg-gradient-to-b from-dark-800/50 to-transparent">
+        <section className="section-padding py-16 bg-gradient-to-b dark:from-dark-800/50 from-light-800/50 to-transparent">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-white mb-4">
+            <h1 className="dark:text-white text-gray-900 mb-4">
               Travaillons <span className="text-primary">ensemble</span>
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg dark:text-gray-400 text-gray-700 max-w-2xl mx-auto">
               Vous avez un projet d'application iOS ou de développement web ? 
               Je suis là pour transformer vos idées en réalité digitale.
             </p>
@@ -183,11 +183,11 @@ export default function ContactPage() {
             {/* Quote Form Section */}
             <div>
               <div className="mb-8">
-                <h2 className="text-3xl text-white mb-3 flex items-center">
+                <h2 className="text-3xl dark:text-white text-gray-900 mb-3 flex items-center">
                   <FileText className="w-8 h-8 text-primary mr-3" />
                   Demandez un devis pour votre projet
                 </h2>
-                <p className="text-gray-400">
+                <p className="dark:text-gray-400 text-gray-700">
                   Décrivez votre projet et recevez une estimation personnalisée
                 </p>
               </div>
@@ -210,14 +210,14 @@ export default function ContactPage() {
                 )}
 
                 <div>
-                  <label htmlFor="quote-name" className="block text-gray-300 mb-2">
+                  <label htmlFor="quote-name" className="block dark:text-gray-300 text-gray-700 mb-2">
                     Votre nom complet *
                   </label>
                   <input
                     type="text"
                     id="quote-name"
                     required
-                    className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                     placeholder="Jean Dupont"
                     value={quoteForm.name}
                     onChange={(e) => setQuoteForm({...quoteForm, name: e.target.value})}
@@ -225,14 +225,14 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="quote-email" className="block text-gray-300 mb-2">
+                  <label htmlFor="quote-email" className="block dark:text-gray-300 text-gray-700 mb-2">
                     Votre email *
                   </label>
                   <input
                     type="email"
                     id="quote-email"
                     required
-                    className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                     placeholder="jean.dupont@example.com"
                     value={quoteForm.email}
                     onChange={(e) => setQuoteForm({...quoteForm, email: e.target.value})}
@@ -240,12 +240,12 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="budget" className="block text-gray-300 mb-2">
+                  <label htmlFor="budget" className="block dark:text-gray-300 text-gray-700 mb-2">
                     Budget estimé
                   </label>
                   <select
                     id="budget"
-                    className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white focus:border-primary focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 focus:border-primary focus:outline-none transition-colors"
                     value={quoteForm.budget}
                     onChange={(e) => setQuoteForm({...quoteForm, budget: e.target.value})}
                   >
@@ -257,14 +257,14 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="project-description" className="block text-gray-300 mb-2">
+                  <label htmlFor="project-description" className="block dark:text-gray-300 text-gray-700 mb-2">
                     Description de votre projet *
                   </label>
                   <textarea
                     id="project-description"
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
                     placeholder="Décrivez votre projet, vos objectifs et vos besoins..."
                     value={quoteForm.projectDescription}
                     onChange={(e) => setQuoteForm({...quoteForm, projectDescription: e.target.value})}
@@ -272,13 +272,13 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="features" className="block text-gray-300 mb-2">
+                  <label htmlFor="features" className="block dark:text-gray-300 text-gray-700 mb-2">
                     Fonctionnalités souhaitées
                   </label>
                   <textarea
                     id="features"
                     rows={3}
-                    className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
                     placeholder="Listez les fonctionnalités principales que vous souhaitez..."
                     value={quoteForm.features}
                     onChange={(e) => setQuoteForm({...quoteForm, features: e.target.value})}
@@ -310,11 +310,11 @@ export default function ContactPage() {
               {/* Quick Contact */}
               <div className="mb-12">
                 <div className="mb-8">
-                  <h2 className="text-3xl text-white mb-3 flex items-center">
+                  <h2 className="text-3xl dark:text-white text-gray-900 mb-3 flex items-center">
                     <MessageSquare className="w-8 h-8 text-primary mr-3" />
                     Une simple question ?
                   </h2>
-                  <p className="text-gray-400">
+                  <p className="dark:text-gray-400 text-gray-700">
                     Envoyez-moi un message rapide ou planifiez un appel
                   </p>
                 </div>
@@ -337,14 +337,14 @@ export default function ContactPage() {
                   )}
 
                   <div>
-                    <label htmlFor="contact-name" className="block text-gray-300 mb-2">
+                    <label htmlFor="contact-name" className="block dark:text-gray-300 text-gray-700 mb-2">
                       Votre nom
                     </label>
                     <input
                       type="text"
                       id="contact-name"
                       required
-                      className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                       placeholder="Votre nom"
                       value={contactForm.name}
                       onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
@@ -352,14 +352,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-email" className="block text-gray-300 mb-2">
+                    <label htmlFor="contact-email" className="block dark:text-gray-300 text-gray-700 mb-2">
                       Votre email
                     </label>
                     <input
                       type="email"
                       id="contact-email"
                       required
-                      className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                       placeholder="votre@email.com"
                       value={contactForm.email}
                       onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
@@ -367,14 +367,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-gray-300 mb-2">
+                    <label htmlFor="message" className="block dark:text-gray-300 text-gray-700 mb-2">
                       Votre message
                     </label>
                     <textarea
                       id="message"
                       required
                       rows={3}
-                      className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 dark:bg-dark-800 bg-white border dark:border-dark-600 border-gray-300 rounded-lg dark:text-white text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
                       placeholder="Votre message..."
                       value={contactForm.message}
                       onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
@@ -405,8 +405,8 @@ export default function ContactPage() {
               <div className="bg-gradient-to-br from-primary/20 to-orange-600/20 rounded-xl p-8 border border-primary/30">
                 <div className="text-center">
                   <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl text-white mb-3">Préférez-vous discuter de vive voix ?</h3>
-                  <p className="text-gray-300 mb-6">
+                  <h3 className="text-2xl dark:text-white text-gray-900 mb-3">Préférez-vous discuter de vive voix ?</h3>
+                  <p className="dark:text-gray-300 text-gray-700 mb-6">
                     Réservez un créneau de 30 minutes pour discuter de votre projet
                   </p>
                   <a
@@ -425,14 +425,14 @@ export default function ContactPage() {
               <div className="mt-8 space-y-3">
                 <a
                   href="tel:0674578668"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-primary transition-colors"
+                  className="flex items-center space-x-3 dark:text-gray-400 text-gray-700 hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   <span>06 74 57 86 68 (WhatsApp)</span>
                 </a>
                 <a
                   href="mailto:mhiguinen235@gmail.com"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-primary transition-colors"
+                  className="flex items-center space-x-3 dark:text-gray-400 text-gray-700 hover:text-primary transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   <span>mhiguinen235@gmail.com</span>
@@ -445,23 +445,23 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <Sparkles className="w-8 h-8 text-primary mx-auto mb-2" />
-              <div className="text-gray-300 font-semibold">Réponse rapide</div>
-              <div className="text-gray-500 text-sm">Sous 24h</div>
+              <div className="dark:text-gray-300 text-gray-700 font-semibold">Réponse rapide</div>
+              <div className="dark:text-gray-500 text-gray-500 text-sm">Sous 24h</div>
             </div>
             <div className="text-center">
               <Sparkles className="w-8 h-8 text-primary mx-auto mb-2" />
-              <div className="text-gray-300 font-semibold">Devis gratuit</div>
-              <div className="text-gray-500 text-sm">Sans engagement</div>
+              <div className="dark:text-gray-300 text-gray-700 font-semibold">Devis gratuit</div>
+              <div className="dark:text-gray-500 text-gray-500 text-sm">Sans engagement</div>
             </div>
             <div className="text-center">
               <Sparkles className="w-8 h-8 text-primary mx-auto mb-2" />
-              <div className="text-gray-300 font-semibold">100% Remote</div>
-              <div className="text-gray-500 text-sm">Collaboration flexible</div>
+              <div className="dark:text-gray-300 text-gray-700 font-semibold">100% Remote</div>
+              <div className="dark:text-gray-500 text-gray-500 text-sm">Collaboration flexible</div>
             </div>
             <div className="text-center">
               <Sparkles className="w-8 h-8 text-primary mx-auto mb-2" />
-              <div className="text-gray-300 font-semibold">Suivi projet</div>
-              <div className="text-gray-500 text-sm">Communication régulière</div>
+              <div className="dark:text-gray-300 text-gray-700 font-semibold">Suivi projet</div>
+              <div className="dark:text-gray-500 text-gray-500 text-sm">Communication régulière</div>
             </div>
           </div>
         </div>

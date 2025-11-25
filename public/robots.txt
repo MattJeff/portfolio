@@ -1,0 +1,33 @@
+# Robots.txt pour mathishiguinen.fr
+# Portfolio de Mathis Higuinen - Développeur iOS & Web
+
+User-agent: *
+Allow: /
+
+# Fichiers importants
+Sitemap: https://mathishiguinen.fr/sitemap.xml
+
+# Bloquer les ressources non pertinentes
+Disallow: /api/
+Disallow: /_next/static/chunks/
+Disallow: /_next/static/development/
+
+# Autoriser les robots à indexer toutes les pages importantes
+Allow: /$
+Allow: /contact
+Allow: /freelance
+Allow: /projet/
+
+# Directives spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Directives spécifiques pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Autoriser les images
+User-agent: Googlebot-Image
+Allow: /images/

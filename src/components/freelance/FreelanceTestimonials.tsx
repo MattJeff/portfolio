@@ -61,14 +61,14 @@ const testimonials = [
 
 export default function FreelanceTestimonials() {
   return (
-    <section className="py-20 bg-dark-800/50">
+    <section className="py-20 bg-light-800 dark:bg-dark-800/50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Ce que disent mes clients
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             50+ missions réussies avec un taux de satisfaction de 100%
           </p>
         </div>
@@ -78,10 +78,10 @@ export default function FreelanceTestimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-dark-600 relative"
+              className="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 relative"
             >
               {/* Quote Icon */}
-              <div className="absolute -top-4 -left-4 bg-gradient-to-br bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -top-4 -left-4 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
                 <Quote className="w-6 h-6 text-white" />
               </div>
 
@@ -93,28 +93,28 @@ export default function FreelanceTestimonials() {
               </div>
 
               {/* Text */}
-              <p className="text-gray-300 mb-6 leading-relaxed italic">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="border-t border-dark-600 pt-4">
-                <div className="font-bold text-white">{testimonial.name}</div>
-                <div className="text-sm text-gray-300">{testimonial.role}</div>
+              <div className="border-t border-gray-200 dark:border-dark-600 pt-4">
+                <div className="font-bold text-gray-900 dark:text-white">{testimonial.name}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">{testimonial.role}</div>
                 <div className="text-sm text-primary font-medium">{testimonial.company}</div>
               </div>
 
               {/* Project Info */}
               <div className="mt-4 bg-gradient-to-r from-primary/10 to-orange-600/5 rounded-lg p-3">
-                <div className="text-xs text-gray-300 mb-1">Projet : {testimonial.project}</div>
-                <div className="text-sm font-semibold text-white">Budget : {testimonial.budget}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-300 mb-1">Projet : {testimonial.project}</div>
+                <div className="text-sm font-semibold text-gray-900 dark:text-white">Budget : {testimonial.budget}</div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Stats */}
-        <div className="mt-16 bg-gradient-to-r bg-primary rounded-2xl p-12 text-white text-center">
+        <div className="mt-16 bg-primary rounded-2xl p-12 text-white text-center">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="text-5xl font-bold mb-2">100%</div>
@@ -137,21 +137,21 @@ export default function FreelanceTestimonials() {
 
         {/* Trust Badges */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+          <div className="bg-white dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-dark-600 text-center shadow-sm">
             <div className="text-3xl mb-2">⚡</div>
-            <div className="font-semibold text-white">Livraison rapide</div>
+            <div className="font-semibold text-gray-900 dark:text-white">Livraison rapide</div>
           </div>
-          <div className="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+          <div className="bg-white dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-dark-600 text-center shadow-sm">
             <div className="text-3xl mb-2">🔒</div>
-            <div className="font-semibold text-white">NDA & Confidentialité</div>
+            <div className="font-semibold text-gray-900 dark:text-white">NDA & Confidentialité</div>
           </div>
-          <div className="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+          <div className="bg-white dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-dark-600 text-center shadow-sm">
             <div className="text-3xl mb-2">💬</div>
-            <div className="font-semibold text-white">Communication 24/7</div>
+            <div className="font-semibold text-gray-900 dark:text-white">Communication 24/7</div>
           </div>
-          <div className="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+          <div className="bg-white dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-dark-600 text-center shadow-sm">
             <div className="text-3xl mb-2">✅</div>
-            <div className="font-semibold text-white">Garantie qualité</div>
+            <div className="font-semibold text-gray-900 dark:text-white">Garantie qualité</div>
           </div>
         </div>
       </div>

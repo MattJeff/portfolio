@@ -1,0 +1,27 @@
+{
+  "name": "Mathis Higuinen - Développeur Full-Stack",
+  "short_name": "Mathis H.",
+  "description": "Portfolio de Mathis Higuinen, développeur Full-Stack iOS & Web avec 7+ ans d'expérience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr-FR",
+  "categories": ["portfolio", "developer", "technology"],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -15,7 +15,13 @@
       "Bash(xattr -c:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(npm run build:*)",
+      "Bash(node scripts/generate-images.mjs:*)",
+      "Bash(curl:*)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []

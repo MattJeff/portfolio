@@ -4,7 +4,7 @@ import { Star, Award, Code, Briefcase } from 'lucide-react'
 
 export default function FreelanceHero() {
   return (
-    <section className="relative bg-dark-900 text-white py-20 overflow-hidden">
+    <section className="relative bg-light-900 dark:bg-dark-900 text-gray-900 dark:text-white py-20 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -24,33 +24,33 @@ export default function FreelanceHero() {
             Développeur <span className="text-primary">Full-Stack Expert</span>
           </h1>
 
-          <p className="text-2xl md:text-3xl mb-4 text-gray-300">
+          <p className="text-2xl md:text-3xl mb-4 dark:text-gray-300 text-gray-700">
             IA & Blockchain | SaaS & Extensions
           </p>
 
           {/* Subtitle */}
-          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl dark:text-gray-400 text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed">
             Architecte full-stack transformant vos idées en SaaS rentables.
             Expert React/Go/Python, IA générative & blockchain Solana.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            <div className="bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-primary transition-all">
+            <div className="bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-600 rounded-xl p-4 hover:border-primary transition-all shadow-sm">
               <div className="text-3xl font-bold text-primary mb-1">7+</div>
-              <div className="text-sm text-gray-400">Années d'expérience</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Années d'expérience</div>
             </div>
-            <div className="bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-primary transition-all">
+            <div className="bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-600 rounded-xl p-4 hover:border-primary transition-all shadow-sm">
               <div className="text-3xl font-bold text-primary mb-1">15+</div>
-              <div className="text-sm text-gray-400">Projets livrés</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Projets livrés</div>
             </div>
-            <div className="bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-primary transition-all">
+            <div className="bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-600 rounded-xl p-4 hover:border-primary transition-all shadow-sm">
               <div className="text-3xl font-bold text-primary mb-1">100%</div>
-              <div className="text-sm text-gray-400">Satisfaction client</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Satisfaction client</div>
             </div>
-            <div className="bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-primary transition-all">
+            <div className="bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-600 rounded-xl p-4 hover:border-primary transition-all shadow-sm">
               <div className="text-3xl font-bold text-primary mb-1">10+</div>
-              <div className="text-sm text-gray-400">Technologies</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Technologies</div>
             </div>
           </div>
 
@@ -79,7 +79,7 @@ export default function FreelanceHero() {
                 <Star key={i} className="w-5 h-5 fill-primary text-primary" />
               ))}
             </div>
-            <span className="text-gray-400">Qualité garantie</span>
+            <span className="dark:text-gray-400 text-gray-500">Qualité garantie</span>
           </div>
         </div>
       </div>

@@ -50,13 +50,13 @@ const JourneySection = () => {
   return (
     <section id="journey" className="section-padding py-20">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-12 text-white">
+        <h2 className="text-center mb-12 dark:text-white text-gray-900">
           Mon <span className="text-primary">Parcours</span>
         </h2>
 
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-dark-600"></div>
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 dark:bg-dark-600 bg-light-600"></div>
 
           {journeyItems.map((item, index) => (
             <div
@@ -66,7 +66,7 @@ const JourneySection = () => {
               }`}
             >
               {/* Timeline Dot */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-12 h-12 bg-dark-800 border-2 border-primary rounded-full flex items-center justify-center z-10">
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-12 h-12 dark:bg-dark-800 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-sm">
                 <div className="text-primary">{item.icon}</div>
               </div>
 
@@ -78,15 +78,15 @@ const JourneySection = () => {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-primary font-semibold">{item.year}</span>
                     <span className={`px-2 py-1 rounded text-xs ${
-                      item.type === 'work' 
-                        ? 'bg-green-500/20 text-green-400' 
-                        : 'bg-blue-500/20 text-blue-400'
+                      item.type === 'work'
+                        ? 'bg-green-500/20 text-green-600 dark:text-green-400'
+                        : 'bg-blue-500/20 text-blue-600 dark:text-blue-400'
                     }`}>
                       {item.type === 'work' ? 'Expérience' : 'Formation'}
                     </span>
                   </div>
-                  <h3 className="text-xl text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
+                  <h3 className="text-xl dark:text-white text-gray-900 mb-2">{item.title}</h3>
+                  <p className="dark:text-gray-400 text-gray-500">{item.description}</p>
                 </div>
               </div>
             </div>

@@ -71,14 +71,14 @@ const skillCategories = [
 
 export default function FreelanceSkills() {
   return (
-    <section className="py-20 bg-dark-800/50">
+    <section className="py-20 bg-light-800 dark:bg-dark-800/50">
       <div className="max-w-7xl mx-auto section-padding">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Stack Technique
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
             Maîtrise complète de 10+ technologies en production
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function FreelanceSkills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-dark-800 rounded-2xl p-8 border border-dark-600 hover:border-primary hover:shadow-xl transition-all duration-300"
+              className="bg-white dark:bg-dark-800 rounded-2xl p-8 border border-gray-200 dark:border-dark-600 hover:border-primary hover:shadow-xl transition-all duration-300"
             >
               {/* Category Title */}
               <div className="mb-6">
@@ -102,14 +102,14 @@ export default function FreelanceSkills() {
                 {category.skills.map((skill, idx) => (
                   <div key={idx}>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-white">
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gray-200 dark:bg-dark-700 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-primary rounded-full transition-all duration-1000 ease-out"
                         style={{ width: `${skill.level}%` }}
@@ -123,19 +123,19 @@ export default function FreelanceSkills() {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 bg-dark-800 border border-primary/30 rounded-2xl p-8">
+        <div className="mt-16 bg-white dark:bg-dark-800 border border-primary/30 rounded-2xl p-8 shadow-sm">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-primary mb-2">10+</div>
-              <div className="text-gray-300">Technologies maîtrisées</div>
+              <div className="text-gray-700 dark:text-gray-300">Technologies maîtrisées</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">7+</div>
-              <div className="text-gray-300">Années d'expérience</div>
+              <div className="text-gray-700 dark:text-gray-300">Années d'expérience</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">15+</div>
-              <div className="text-gray-300">Projets en production</div>
+              <div className="text-gray-700 dark:text-gray-300">Projets en production</div>
             </div>
           </div>
         </div>

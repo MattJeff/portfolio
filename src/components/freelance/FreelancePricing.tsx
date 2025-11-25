@@ -107,14 +107,14 @@ const additionalServices = [
 
 export default function FreelancePricing() {
   return (
-    <section id="pricing" className="py-20 bg-dark-900">
+    <section id="pricing" className="py-20 bg-light-900 dark:bg-dark-900">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Tarifs & Forfaits
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Solutions adaptées à votre budget et vos besoins
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function FreelancePricing() {
                 className={`rounded-2xl p-8 ${
                   pkg.popular
                     ? 'bg-gradient-to-br bg-primary text-white shadow-2xl scale-105 border-4 border-blue-400'
-                    : 'bg-dark-800 border-2 border-dark-600'
+                    : 'bg-white dark:bg-dark-800 border-2 border-gray-200 dark:border-dark-600'
                 } hover:shadow-2xl transition-all duration-300 relative`}
               >
                 {pkg.popular && (
@@ -140,26 +140,26 @@ export default function FreelancePricing() {
 
                 {/* Icon & Name */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-3 rounded-xl ${pkg.popular ? 'bg-dark-900/20' : 'bg-dark-900'}`}>
+                  <div className={`p-3 rounded-xl ${pkg.popular ? 'bg-dark-900/20' : 'bg-gray-100 dark:bg-dark-900'}`}>
                     <Icon className={`w-6 h-6 ${pkg.popular ? 'text-white' : 'text-primary'}`} />
                   </div>
-                  <h3 className={`text-2xl font-bold ${pkg.popular ? 'text-white' : 'text-white'}`}>
+                  <h3 className={`text-2xl font-bold ${pkg.popular ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
                     {pkg.name}
                   </h3>
                 </div>
 
                 {/* Price */}
                 <div className="mb-4">
-                  <div className={`text-4xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-white'}`}>
+                  <div className={`text-4xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
                     {pkg.price}
                   </div>
-                  <div className={`text-sm ${pkg.popular ? 'text-white/80' : 'text-gray-400'}`}>
+                  <div className={`text-sm ${pkg.popular ? 'text-white/80' : 'text-gray-500 dark:text-gray-400'}`}>
                     {pkg.currency} • {pkg.duration}
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className={`mb-6 ${pkg.popular ? 'text-white/90' : 'text-gray-300'}`}>
+                <p className={`mb-6 ${pkg.popular ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'}`}>
                   {pkg.description}
                 </p>
 
@@ -168,7 +168,7 @@ export default function FreelancePricing() {
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-white' : 'text-green-500'}`} />
-                      <span className={`text-sm ${pkg.popular ? 'text-white/90' : 'text-gray-300'}`}>
+                      <span className={`text-sm ${pkg.popular ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'}`}>
                         {feature}
                       </span>
                     </li>
@@ -192,26 +192,26 @@ export default function FreelancePricing() {
         </div>
 
         {/* Additional Services */}
-        <div className="bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-dark-600">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+        <div className="bg-gradient-to-br from-gray-100 to-white dark:from-dark-800 dark:to-dark-700 rounded-2xl p-8 border border-gray-200 dark:border-dark-600">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
             Autres Services Disponibles
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-dark-900 rounded-xl p-6 border border-dark-600 hover:shadow-lg transition-all duration-300"
+                className="bg-white dark:bg-dark-900 rounded-xl p-6 border border-gray-200 dark:border-dark-600 hover:shadow-lg transition-all duration-300"
               >
-                <h4 className="font-bold text-white mb-2">{service.name}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">{service.name}</h4>
                 <div className="text-primary font-semibold mb-1">{service.price}</div>
-                <div className="text-sm text-gray-400">Durée : {service.duration}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Durée : {service.duration}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Payment Info */}
-        <div className="mt-12 bg-gray-900 text-white rounded-2xl p-8">
+        <div className="mt-12 bg-gray-800 dark:bg-gray-900 text-white rounded-2xl p-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h4 className="text-xl font-bold mb-4">Modalités de Paiement</h4>
@@ -234,7 +234,7 @@ export default function FreelancePricing() {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <p className="text-gray-300 mb-4 text-lg">
+          <p className="text-gray-700 dark:text-gray-300 mb-4 text-lg">
             Premier échange de 30min <strong className="text-primary">gratuit</strong> pour évaluer la faisabilité
           </p>
           <a
