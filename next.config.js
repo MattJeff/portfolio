@@ -6,6 +6,11 @@ const nextConfig = {
   // Export statique : le site n'a aucune route serveur, il est servi par GitHub Pages
   output: 'export',
 
+  // ponytail: servi sous mattjeff.github.io/portfolio/ tant que le domaine custom
+  // n'est pas branché — sans ça les assets /_next/* pointent à la racine et 404.
+  // Pour repasser sur mathishiguinen.com : retirer PAGES_BASE_PATH du workflow.
+  basePath: process.env.PAGES_BASE_PATH || '',
+
   // Optimisation des images
   images: {
     // ponytail: obligatoire avec output: 'export' — pas de serveur pour redimensionner.
