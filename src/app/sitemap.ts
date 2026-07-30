@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mathishiguinen.fr'
+  const baseUrl = 'https://mathishiguinen.com'
 
   // Liste des projets pour générer les URLs dynamiques
   const projects = [

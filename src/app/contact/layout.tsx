@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     'Mathis Higuinen contact',
   ],
   alternates: {
-    canonical: 'https://mathishiguinen.fr/contact',
+    canonical: 'https://mathishiguinen.com/contact',
   },
   openGraph: {
     title: 'Contactez Mathis Higuinen - Devis Gratuit',
     description: 'Demandez un devis gratuit pour votre projet. Réponse garantie sous 24h. Développeur Full-Stack iOS & Web.',
-    url: 'https://mathishiguinen.fr/contact',
+    url: 'https://mathishiguinen.com/contact',
     images: [
       {
         url: '/images/og-contact.png',

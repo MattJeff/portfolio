@@ -1,11 +1,11 @@
-# Robots.txt pour mathishiguinen.fr
+# Robots.txt pour mathishiguinen.com
 # Portfolio de Mathis Higuinen - Développeur iOS & Web
 
 User-agent: *
 Allow: /
 
 # Fichiers importants
-Sitemap: https://mathishiguinen.fr/sitemap.xml
+Sitemap: https://mathishiguinen.com/sitemap.xml
 
 # Bloquer les ressources non pertinentes
 Disallow: /api/

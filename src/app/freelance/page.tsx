@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     'extension Chrome développeur',
   ],
   alternates: {
-    canonical: 'https://mathishiguinen.fr/freelance',
+    canonical: 'https://mathishiguinen.com/freelance',
   },
   openGraph: {
     title: 'Services Freelance - Mathis Higuinen | Développeur Expert',
     description: '7+ ans d\'expérience, 125+ projets livrés. Développement iOS, Web, SaaS, IA, Blockchain. Demandez un devis gratuit.',
-    url: 'https://mathishiguinen.fr/freelance',
+    url: 'https://mathishiguinen.com/freelance',
     images: [
       {
         url: '/images/og-freelance.png',

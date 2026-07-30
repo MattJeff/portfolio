@@ -10,7 +10,7 @@ const inter = Inter({
   preload: true,
 })
 
-const siteUrl = 'https://mathishiguinen.fr'
+const siteUrl = 'https://mathishiguinen.com'
 
 export const viewport: Viewport = {
   width: 'device-width',

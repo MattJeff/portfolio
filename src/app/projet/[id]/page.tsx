@@ -43,12 +43,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'portfolio Mathis Higuinen',
     ],
     alternates: {
-      canonical: `https://mathishiguinen.fr/projet/${id}`,
+      canonical: `https://mathishiguinen.com/projet/${id}`,
     },
     openGraph: {
       title: project.title,
       description: shortDescription,
-      url: `https://mathishiguinen.fr/projet/${id}`,
+      url: `https://mathishiguinen.com/projet/${id}`,
       type: 'article',
       images: project.images[0] ? [
         {
@@ -97,9 +97,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   const breadcrumbItems = [
-    { name: 'Accueil', url: 'https://mathishiguinen.fr' },
-    { name: 'Projets', url: 'https://mathishiguinen.fr/#projects' },
-    { name: project.title, url: `https://mathishiguinen.fr/projet/${id}` },
+    { name: 'Accueil', url: 'https://mathishiguinen.com' },
+    { name: 'Projets', url: 'https://mathishiguinen.com/#projects' },
+    { name: project.title, url: `https://mathishiguinen.com/projet/${id}` },
   ]
 
   return (
@@ -108,7 +108,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <ProjectJsonLd
         title={project.title}
         description={project.description.split('\n')[0]}
-        url={`https://mathishiguinen.fr/projet/${id}`}
+        url={`https://mathishiguinen.com/projet/${id}`}
         image={project.images[0]}
         technologies={project.technologies}
         dateCreated={`${project.year}-01-01`}
