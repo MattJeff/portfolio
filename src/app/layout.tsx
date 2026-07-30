@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import { PersonJsonLd, WebSiteJsonLd, ProfessionalServiceJsonLd, FAQJsonLd } from '@/components/seo/JsonLd'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -162,6 +163,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
